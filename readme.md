@@ -1,9 +1,21 @@
 # oh-my-posh-config
 
-## Install
+## Installation
 
-### PowerShell 7+
+### Bash (from Git for Windows)
 
 ```bash
-export reposFolder="${reposFolder:-$HOME/git}" && export ohMyPoshConfigJaidFolder="${ohMyPoshConfigJaidFolder:-$reposFolder/oh-my-posh-config}" && printf '\neval "$(~/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe init bash --config %s)"\n' "$(cygpath --mixed "$ohMyPoshConfigJaidFolder/src/jaid.omp.yml")" >> ~/.bashrc
+export reposFolder="${reposFolder:-$HOME/git}" && export ohMyPoshConfigJaidFolder="${ohMyPoshConfigJaidFolder:-$reposFolder/oh-my-posh-config}" && printf '\neval "$(%s init bash --config %s)"\n' "$(cygpath --mixed "$(which oh-my-posh)")" "$(cygpath --mixed "$ohMyPoshConfigJaidFolder/src/jaid.omp.yml")" >> ~/.bashrc
+```
+
+### zsh (from Git for Windows)
+
+```bash
+export reposFolder="${reposFolder:-$HOME/git}" && export ohMyPoshConfigJaidFolder="${ohMyPoshConfigJaidFolder:-$reposFolder/oh-my-posh-config}" && printf '\neval "$(%s init zsh --config %s)"\n' "$(cygpath --mixed "$(which oh-my-posh)")" "$(cygpath --mixed "$ohMyPoshConfigJaidFolder/src/jaid.omp.yml")" >> ~/.zshrc
+```
+
+### PowerShell 7
+
+```bash
+export reposFolder="${reposFolder:-$HOME/git}" && export ohMyPoshConfigJaidFolder="${ohMyPoshConfigJaidFolder:-$reposFolder/oh-my-posh-config}" && export powershellProfileFolder="${powershellProfileFolder:-$HOME/Documents/PowerShell}" && mkdir --parents "$powershellProfileFolder" && printf '\nInvoke-Expression (%s init pwsh --config "%s")\n' "$(cygpath --mixed "$(which oh-my-posh)")" "$(cygpath --mixed "$ohMyPoshConfigJaidFolder/src/jaid.omp.yml")" >> "$powershellProfileFolder/profile.ps1"
 ```
