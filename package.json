@@ -1,0 +1,14 @@
+{
+  "name": "oh-my-posh-config",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "printf 'No $npm_lifecycle_script script specified\n'",
+    "build": "printf 'No $npm_lifecycle_script script specified\n'",
+    "test": "printf 'No $npm_lifecycle_script script specified\n'"
+  },
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.54.0",
+    "eslint-plugin-yml": "^1.10.0"
+  }
+}
