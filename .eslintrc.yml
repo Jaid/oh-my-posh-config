@@ -56,6 +56,7 @@ overrides:
       order:
       - type
       - alignment
+      - newline
       - segments
       - order:
           type: asc
@@ -66,8 +67,11 @@ overrides:
       pathPattern: ^blocks\[\d+\]\.segments\[\d+\]$
       order:
       - type
-      - template
+      - alias
       - properties
+      - template
+      - templates
+      - templates_logic
       - interactive
       - style
       - leading_diamond
