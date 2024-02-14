@@ -55,7 +55,7 @@ blocks:
     properties:
       fetch_stash_count: true
       fetch_status: true
-    template: ' {{ .HEAD }}{{ if .Working.Changed }}  {{ end }}{{ if gt .StashCount 0 }}  {{ end }}'
+    template: ' {{ .HEAD }}{{ if .Working.Changed }}  {{ end }}{{ if gt .StashCount 0 }}  {{ end }} '
     style: powerline
     powerline_symbol: *powerlineSplitter
     foreground: p:foreground
