@@ -65,26 +65,11 @@ blocks:
     - '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}'
     - '{{ if gt .Ahead 0 }}#B388FF{{ end }}'
     - '{{ if gt .Behind 0 }}#B388FF{{ end }}'
-  - type: status
-    template: ' {{ .Templates }} '
-    templates:
-    - |-
-      {{ if eq .Code 0 }}<p:shellForegroundDimmed></>{{ end }}
-    - |-
-      <p:errorForegroundDimmed>󱚡</> {{ .String }}
-    templates_logic: first_match
-    style: powerline
-    powerline_symbol: *powerlineSplitter
-    foreground: p:foreground
-    background_templates:
-    - |-
-      {{ if eq .Code 0 }}p:shellBackground{{ end }}
-    - p:errorBackground
   - type: executiontime
     properties:
       style: roundrock
-      threshold: 1000
-    template: '{{ if eq .Code 0 }} {{ end }}{{ .Templates }} {{ .FormattedMs }} '
+      threshold: 1
+    template: ' {{ if eq .Code 0 }} {{ end }}{{ .Templates }} {{ .FormattedMs }} '
     templates:
     - |-
       {{ if ne .Code 0 }}<p:errorForegroundDimmed>󱎫</>{{ end }}
@@ -98,6 +83,21 @@ blocks:
     - |-
       {{ if ne .Code 0 }}p:errorBackground{{ end }}
     - p:shellBackground
+  - type: status
+    template: '{{ .Templates }} '
+    templates:
+    - |-
+      {{ if eq .Code 0 }}<p:shellForegroundDimmed></>{{ end }}
+    - |-
+      <p:errorForegroundDimmed>󱚡</> {{ .String }}
+    templates_logic: first_match
+    style: powerline
+    powerline_symbol: *powerlineSplitter
+    foreground: p:foreground
+    background_templates:
+    - |-
+      {{ if eq .Code 0 }}p:shellBackground{{ end }}
+    - p:errorBackground
 - type: prompt
   alignment: left
   newline: true
