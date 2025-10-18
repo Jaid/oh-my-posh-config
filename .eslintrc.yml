@@ -84,6 +84,7 @@ overrides:
       - order:
           type: asc
           natural: true
+      - cache
     - pathPattern: ^blocks\[\d+\]\.segments\[\d+\]\.properties\.mapped_shell_names$
       order:
       - order:
