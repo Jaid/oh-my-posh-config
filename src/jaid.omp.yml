@@ -1,4 +1,5 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+# Symbols:     
 version: 3
 palette:
   errorBackground: '#ff3939'
@@ -33,9 +34,10 @@ blocks:
       mapped_shell_names:
         bash: 
         cmd: 
+        fish: 
         pwsh: 󰨊
         zsh: 󰰶
-    template: '{{ .Name }} '
+    template: '{{ .Name }}     '
     style: diamond
     trailing_diamond: 
     foreground_templates:
@@ -44,6 +46,34 @@ blocks:
     background_templates:
     - '{{ if .Root }}p:rootBackground{{ end }}'
     - p:shellBackground
+  - type: text
+    template: '{{if ge .SHLVL 2 }}>{{ end }}'
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: p:shellBackground
+    background: p:shellBackground
+  - type: text
+    template: '{{if ge .SHLVL 3 }}>{{ end }}'
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: p:shellBackground
+    background: p:shellBackground
+  - type: text
+    template: '{{if ge .SHLVL 4 }}>{{ end }}'
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: p:shellBackground
+    background: p:shellBackground
+  - type: text
+    template: '{{if ge .SHLVL 5 }}>{{ end }}'
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: p:shellBackground
+    background: p:shellBackground
   - type: executiontime
     properties:
       cache_duration: none
