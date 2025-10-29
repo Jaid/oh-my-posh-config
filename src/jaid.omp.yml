@@ -148,4 +148,4 @@ blocks:
       shell: pwsh
     style: plain
   trailing_diamond: "\n"
-console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ .Folder }}'
+console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ if (readFile ".git/index") }}{{ else if (readFile "package.json") }}{{ else }}{{ end }} {{ .Folder }}' # TODO Replace icons by  (git),  (bun),  (dir) as soon as supported by the terminal tab font
