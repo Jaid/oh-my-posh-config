@@ -148,4 +148,4 @@ blocks:
       shell: pwsh
     style: plain
   trailing_diamond: "\n"
-console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ .PWD }}'
+console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ .Folder }}'
