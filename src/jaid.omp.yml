@@ -74,6 +74,13 @@ blocks:
     trailing_diamond: 
     foreground: p:shellBackground
     background: p:shellBackground
+  - type: text
+    template: '{{if ge .SHLVL 6 }}>{{ end }}'
+    style: diamond
+    leading_diamond: 
+    trailing_diamond: 
+    foreground: p:shellBackground
+    background: p:shellBackground
   - type: executiontime
     properties:
       cache_duration: none
