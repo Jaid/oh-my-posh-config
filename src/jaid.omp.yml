@@ -139,9 +139,9 @@ blocks:
   - type: git
     properties:
       cache_duration: none
-      fetch_stash_count: true
       fetch_status: true
-    template: ' {{ .HEAD }}{{ if .Working.Changed }} {{ end }}{{ if gt .StashCount 0 }} {{ end }} '
+      fetch_upstream_icon: true
+    template: ' {{ if .UpstreamURL }}{{ url .HEAD .UpstreamURL }}{{ else }}{{ .HEAD }}{{ end }}{{ if .Working.Changed }}  {{ end }}'
     style: diamond
     leading_diamond: 
     trailing_diamond: 
