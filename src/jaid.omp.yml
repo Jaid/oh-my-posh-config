@@ -37,7 +37,19 @@ blocks:
         fish: 
         pwsh: 󰨊
         zsh: 󰰶
-    template: '{{ .Name }}     '
+    template: '{{ .Name }}    {{ if not .Segments.Project.Type }}   {{ end }}'
+    style: diamond
+    trailing_diamond: 
+    foreground_templates:
+    - '{{ if .Root }}p:rootForegroundDimmed{{ end }}'
+    - p:shellForegroundDimmed
+    background_templates:
+    - '{{ if .Root }}p:rootBackground{{ end }}'
+    - p:shellBackground
+  - type: project
+    properties:
+      cache_duration: none
+    template: '{{ if eq .Type "node" }}{{ url "" (printf "%s%s%s" "vscode://file/" (regexReplaceAll "\\\\" .AbsolutePWD "/") "/package.json") }} {{ else }} {{ end }}'
     style: diamond
     trailing_diamond: 
     foreground_templates:
@@ -148,4 +160,4 @@ blocks:
       shell: pwsh
     style: plain
   trailing_diamond: "\n"
-console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ if (readFile ".git/index") }}{{ else if (readFile "package.json") }}{{ else }}{{ end }} {{ .Folder }}' # TODO Replace icons by  (git),  (bun),  (dir) as soon as supported by the terminal tab font
+console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ if .Segments.Git.RepoName }}g{{ else if eq .Segments.Project.Type "node" }}b{{ else }}d{{ end }} {{ .Folder }}' # TODO Replace icons by 󰊢 (g),  (b),  (d) as soon as supported by the terminal tab font
