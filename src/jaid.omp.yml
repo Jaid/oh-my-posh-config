@@ -141,7 +141,7 @@ blocks:
       cache_duration: none
       fetch_status: true
       fetch_upstream_icon: true
-    template: ' {{ if .UpstreamURL }}{{ url .HEAD .UpstreamURL }}{{ else }}{{ .HEAD }}{{ end }}{{ if .Working.Changed }}  {{ end }}'
+    template: ' {{ if .UpstreamURL }}{{ url .HEAD .UpstreamURL }} {{ else }}{{ .HEAD }}{{ end }}{{ if .Working.Changed }}  {{ end }}'
     style: diamond
     leading_diamond: 
     trailing_diamond: 
