@@ -129,6 +129,7 @@ blocks:
       folder_icon: '  '
       folder_separator_icon: ' <p:pathForegroundDimmed></> '
       style: full
+      mapped_locations_enabled: false
     template: ' {{ .Path }} '
     interactive: true
     style: diamond
@@ -160,4 +161,4 @@ blocks:
       shell: pwsh
     style: plain
   trailing_diamond: "\n"
-console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ if .Segments.Git.RepoName }}g{{ else if eq .Segments.Project.Type "node" }}b{{ else }}d{{ end }} {{ .Folder }}' # TODO Replace icons by 󰊢 (g),  (b),  (d) as soon as supported by the terminal tab font
+console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ if .Segments.Git.RepoName }}🦑{{ else if eq .Segments.Project.Type "node" }}🧅{{ else }}📁{{ end }} {{ .Folder }}' # TODO Replace icons by 󰊢 (🦑),  (🧅),  (📁) as soon as supported by the terminal tab font
