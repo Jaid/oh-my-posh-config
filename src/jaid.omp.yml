@@ -153,12 +153,5 @@ blocks:
     - '{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}'
     - '{{ if gt .Ahead 0 }}#B388FF{{ end }}'
     - '{{ if gt .Behind 0 }}#B388FF{{ end }}'
-  - type: command
-    properties:
-      cache_duration: none
-      command: Start-Process 'mpv' -ArgumentList '--no-terminal --no-config --no-video "C:/Users/jaid/Downloads/brave/yoshi-tongue.mp3"' -WindowStyle Hidden
-      interpret: false
-      shell: pwsh
-    style: plain
   trailing_diamond: "\n"
 console_title_template: '{{ if ge .Jobs 1 }}{{ .Jobs }} {{ end }}{{ if .Segments.Git.RepoName }}🦑{{ else if eq .Segments.Project.Type "node" }}🧅{{ else }}📁{{ end }} {{ .Folder }}' # TODO Replace icons by 󰊢 (🦑),  (🧅),  (📁) as soon as supported by the terminal tab font
