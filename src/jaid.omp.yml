@@ -120,7 +120,6 @@ blocks:
       folder_icon: '  '
       folder_separator_icon: ' <p:pathForegroundDimmed></> '
       style: full
-      mapped_locations_enabled: false
     template: ' {{ .Path }} '
     interactive: true
     style: diamond
