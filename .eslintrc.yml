@@ -68,7 +68,7 @@ overrides:
       order:
       - type
       - alias
-      - properties
+      - options
       - template
       - templates
       - templates_logic
@@ -85,7 +85,7 @@ overrides:
           type: asc
           natural: true
       - cache
-    - pathPattern: ^blocks\[\d+\]\.segments\[\d+\]\.properties\.mapped_shell_names$
+    - pathPattern: ^blocks\[\d+\]\.segments\[\d+\]\.options\.mapped_shell_names$
       order:
       - order:
           type: asc

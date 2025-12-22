@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
 # Symbols:     
-version: 3
+version: 4
 palette:
   errorBackground: '#ff3939'
   errorForegroundDimmed: '#681616'
@@ -18,8 +18,6 @@ blocks:
   alignment: left
   segments:
   - type: os
-    properties:
-      cache_duration: none
     template: ' {{ .Icon }} '
     style: diamond
     foreground_templates:
@@ -29,8 +27,7 @@ blocks:
     - '{{ if .Root }}p:rootBackground{{ end }}'
     - p:shellBackground
   - type: shell
-    properties:
-      cache_duration: none
+    options:
       mapped_shell_names:
         bash: 
         cmd: 
@@ -47,8 +44,6 @@ blocks:
     - '{{ if .Root }}p:rootBackground{{ end }}'
     - p:shellBackground
   - type: project
-    properties:
-      cache_duration: none
     template: '{{ if eq .Type "node" }}{{ url "" (printf "%s%s%s" "vscode://file/" (regexReplaceAll "\\\\" .AbsolutePWD "/") "/package.json") }} {{ else }} {{ end }}'
     style: diamond
     trailing_diamond: 
@@ -94,8 +89,7 @@ blocks:
     foreground: p:shellBackground
     background: p:shellBackground
   - type: executiontime
-    properties:
-      cache_duration: none
+    options:
       style: roundrock
       threshold: 1
     templates:
@@ -110,8 +104,6 @@ blocks:
     - '{{ if ne .Code 0 }}p:errorBackground{{ end }}'
     - p:shellBackground
   - type: status
-    properties:
-      cache_duration: none
     templates:
     - ' {{ if eq .Code 0 }}<p:shellForegroundDimmed></>{{ end }} '
     - ' <p:errorForegroundDimmed>󱚡</> {{ .String }} '
@@ -124,8 +116,7 @@ blocks:
     - '{{ if eq .Code 0 }}p:shellBackground{{ end }}'
     - p:errorBackground
   - type: path
-    properties:
-      cache_duration: none
+    options:
       folder_icon: '  '
       folder_separator_icon: ' <p:pathForegroundDimmed></> '
       style: full
@@ -138,8 +129,7 @@ blocks:
     foreground: p:foreground
     background: p:pathBackground
   - type: git
-    properties:
-      cache_duration: none
+    options:
       fetch_status: true
       fetch_upstream_icon: true
     template: ' {{ if .UpstreamURL }}{{ url .HEAD .UpstreamURL }} {{ else }}{{ .HEAD }}{{ end }}{{ if .Working.Changed }}  {{ end }}'
