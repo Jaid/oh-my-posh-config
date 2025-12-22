@@ -11,7 +11,7 @@ palette:
   rootBackground: '#ff9021'
   rootForegroundDimmed: '#7a450f'
   shellBackground: '#67d6ff'
-  shellForegroundDimmed: '#2e60bb'
+  shellForegroundDimmed: '#3772c5'
   terminalBackground: black
 blocks:
 - type: prompt
@@ -34,7 +34,7 @@ blocks:
         fish: 
         pwsh: 󰨊
         zsh: 󰰶
-    template: '{{ .Name }}    {{ if not .Segments.Project.Type }}   {{ end }}'
+    template: '{{ .Name }}  {{ .UserName }}  {{ if not .Segments.Project.Type }}   {{ end }}'
     style: diamond
     trailing_diamond: 
     foreground_templates:
